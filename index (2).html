@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swathi Bhaskaran | Data Governance & Quality Analytics - swathi-portfolio.com</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background-color: #0f0f0f;
+        }
+        
+        a {
+            color: #4a9eff;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: #1a1a1a;
+            border-bottom: 1px solid #2a2a2a;
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 18px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            font-size: 14px;
+        }
+        
+        nav a {
+            color: #b0b0b0;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #4a9eff;
+            text-decoration: none;
+        }
+        
+        /* Hero Section */
+        .hero {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            font-weight: 600;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            color: #a0a0a0;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-contact {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            font-size: 14px;
+            color: #b0b0b0;
+            flex-wrap: wrap;
+        }
+        
+        /* Summary Section */
+        .summary {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            background-color: #0f0f0f;
+        }
+        
+        .summary h2 {
+            font-size: 24px;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+        }
+        
+        .summary p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #c0c0c0;
+            margin-bottom: 1rem;
+        }
+        
+        /* Featured Project */
+        .featured-project {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            background-color: #161616;
+        }
+        
+        .featured-project h2 {
+            font-size: 24px;
+            margin-bottom: 2rem;
+            color: #ffffff;
+        }
+        
+        .project-card {
+            background-color: #1a1a1a;
+            border-left: 4px solid #4a9eff;
+            padding: 2rem;
+            border-radius: 4px;
+        }
+        
+        .project-card h3 {
+            font-size: 18px;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+        
+        .project-card .meta {
+            font-size: 13px;
+            color: #666666;
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-card ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-card li {
+            font-size: 14px;
+            color: #c0c0c0;
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .project-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4a9eff;
+            font-weight: bold;
+        }
+        
+        .tags {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+        
+        .tag {
+            background-color: #2a3f5f;
+            color: #4a9eff;
+            padding: 0.35rem 0.75rem;
+            border-radius: 16px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        /* Blog/Case Studies Section */
+        .blog-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        .blog-section h2 {
+            font-size: 24px;
+            margin-bottom: 2rem;
+            color: #ffffff;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        
+        .blog-card {
+            border: 1px solid #2a2a2a;
+            border-radius: 4px;
+            padding: 1.5rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            background-color: #1a1a1a;
+        }
+        
+        .blog-card:hover {
+            border-color: #4a9eff;
+            box-shadow: 0 2px 8px rgba(74, 158, 255, 0.15);
+        }
+        
+        .blog-card h3 {
+            font-size: 16px;
+            margin-bottom: 0.75rem;
+            color: #ffffff;
+        }
+        
+        .blog-card p {
+            font-size: 14px;
+            color: #a0a0a0;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .blog-meta {
+            font-size: 12px;
+            color: #666666;
+        }
+        
+        .blog-card a {
+            font-size: 14px;
+            font-weight: 500;
+            color: #4a9eff;
+            display: inline-block;
+            margin-top: 0.75rem;
+        }
+        
+        /* Skills Section */
+        .skills-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            background-color: #161616;
+        }
+        
+        .skills-section h2 {
+            font-size: 24px;
+            margin-bottom: 2rem;
+            color: #ffffff;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        
+        .skill-category h3 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .skill-category p {
+            font-size: 14px;
+            color: #c0c0c0;
+            line-height: 1.8;
+        }
+        
+        /* Resume Section */
+        .resume-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        .resume-section h2 {
+            font-size: 24px;
+            margin-bottom: 2rem;
+            color: #ffffff;
+        }
+        
+        .resume-section p {
+            color: #b0b0b0;
+        }
+        
+        .resume-download {
+            background-color: #4a9eff;
+            color: #ffffff;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            display: inline-block;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .resume-download:hover {
+            background-color: #3a7fd9;
+            text-decoration: none;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            border-top: 1px solid #2a2a2a;
+            padding: 2rem;
+            text-align: center;
+            color: #666666;
+            font-size: 14px;
+            margin-top: 3rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            nav ul {
+                gap: 1rem;
+                font-size: 13px;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-contact {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <div class="logo">Swathi Bhaskaran</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#blog">Case Studies</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#resume">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <h1>Swathi Bhaskaran</h1>
+        <p>Data Governance & Quality Analytics</p>
+        <div class="hero-contact">
+            <span>📱 +1-586-345-3924</span>
+            <span>🔗 <a href="https://linkedin.com/in/swathi-bhaskaran96/">LinkedIn</a></span>
+        </div>
+    </section>
+
+    <!-- Summary -->
+    <section class="summary">
+        <h2>Professional Summary</h2>
+        <p>Data governance and quality professional with 5+ years ensuring data reliability, integrity, and standardization across enterprise platforms. Specialized in designing data quality frameworks, SLA monitoring, and data stewardship practices. Built governance infrastructure including automated validation, consistency checks, and data lineage tracking.</p>
+        <p>I help organizations transform from reactive data quality management to proactive, scalable governance—ensuring data is trustworthy, accessible, and compliant across the entire data lifecycle.</p>
+    </section>
+
+    <!-- Featured Project -->
+    <section class="featured-project" id="projects">
+        <h2>Featured Project</h2>
+        <div class="project-card">
+            <h3>Data Quality Governance Framework & SLA Monitoring System</h3>
+            <div class="meta">Wayne State University | 2024–2025 | Capstone Project</div>
+            <ul>
+                <li>Designed enterprise data governance framework across batch and real-time e-commerce pipelines serving 300M+ users</li>
+                <li>Built automated validation services using Python and Airflow implementing rule-based checks, anomaly detection, and real-time alerting</li>
+                <li>Established data stewardship model assigning domain owners, documented RACI matrix and escalation procedures</li>
+                <li>Implemented master data consistency rules and deduplication logic reducing downstream data quality incidents by 65%</li>
+                <li>Built data lineage mapping and Power BI governance dashboard tracking SLA compliance (99.2%), data quality scores, and incident metrics</li>
+                <li><strong>Results:</strong> 80% reduction in manual quality checks, 30-min average incident response time, 100% data lineage documented</li>
+            </ul>
+            <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">Airflow</span>
+                <span class="tag">SQL</span>
+                <span class="tag">Power BI</span>
+                <span class="tag">Data Governance</span>
+                <span class="tag">Master Data Management</span>
+                <span class="tag">Snowflake</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog / Case Studies -->
+    <section class="blog-section" id="blog">
+        <h2>Case Studies & Articles</h2>
+        <div class="blog-grid">
+            <div class="blog-card">
+                <h3>Building a Data Stewardship Model from Scratch</h3>
+                <p>How to establish clear ownership and accountability for data quality across teams. Includes RACI matrix templates, escalation procedures, and runbook examples based on real governance implementations.</p>
+                <div class="blog-meta">8 min read • Data Governance</div>
+                <a href="case-study-stewardship.html">Read Case Study →</a>
+            </div>
+
+            <div class="blog-card">
+                <h3>Master Data Management in E-Commerce: Challenges & Solutions</h3>
+                <p>Deep dive into MDM principles and deduplication logic for orders, returns, and customer data. Learn how to maintain golden records and implement consistency checks that reduce downstream data quality incidents.</p>
+                <div class="blog-meta">10 min read • Master Data Management</div>
+                <a href="case-study-mdm.html">Read Case Study →</a>
+            </div>
+
+            <div class="blog-card">
+                <h3>SLA Frameworks & Quality Metrics That Actually Work</h3>
+                <p>Defining meaningful SLAs for data pipelines. Explores completeness, accuracy, consistency, and timeliness dimensions with real examples and thresholds. Includes Power BI dashboard design for governance monitoring.</p>
+                <div class="blog-meta">7 min read • Data Quality</div>
+                <a href="case-study-sla.html">Read Case Study →</a>
+            </div>
+
+            <div class="blog-card">
+                <h3>From Reactive to Proactive: Automating Data Quality Validation</h3>
+                <p>How Python + Airflow can shift governance from finding problems after they impact dashboards to preventing them before they happen. Includes real validation rules, anomaly detection strategies, and alerting architecture.</p>
+                <div class="blog-meta">9 min read • Data Engineering</div>
+                <a href="case-study-automation.html">Read Case Study →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section" id="skills">
+        <h2>Technical Skills & Expertise</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Languages & Query</h3>
+                <p>Advanced SQL • Python (pandas, numpy, PySpark, sklearn) • R • Statistical Modeling • A/B Testing</p>
+            </div>
+            <div class="skill-category">
+                <h3>BI & Visualization</h3>
+                <p>Power BI • Tableau • Looker • Excel (Advanced) • Dashboard Design • Data Storytelling</p>
+            </div>
+            <div class="skill-category">
+                <h3>Data Platforms & Governance</h3>
+                <p>Snowflake • Azure • dbt • Airflow • ETL Pipeline Development • Data Lineage</p>
+            </div>
+            <div class="skill-category">
+                <h3>Core Competencies</h3>
+                <p>Data Quality & SLA Monitoring • Data Validation & Integrity • Master Data Management • Data Stewardship • Data Standardization & Consistency</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section class="resume-section" id="resume">
+        <h2>Full Resume</h2>
+        <p style="margin-bottom: 1.5rem;">Download my complete resume including detailed professional experience, education, and technical skills.</p>
+        <a href="resume.pdf" class="resume-download">Download Resume (PDF)</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Swathi Bhaskaran. All rights reserved. | swathi-portfolio.com</p>
+    </footer>
+</body>
+</html>
